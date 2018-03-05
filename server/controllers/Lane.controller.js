@@ -7,7 +7,8 @@ export function getSomething(req, res) {
 
 export function addLane(req, res) {
   if (!req.body.name) {
-    res.status(403).end();
+    res.status(400).end();
+    return;
   }
 
   const newLane = new Lane(req.body);
